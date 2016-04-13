@@ -4889,6 +4889,9 @@ a.text-danger:hover {
   background-color: white;
   z-index: 10000; }
 
+body {
+  padding-top: 85px; }
+
 #bignav .col-md-4 {
   height: 100%; }
   #bignav .col-md-4 .carousel-caption {
