@@ -88,7 +88,9 @@ $navbar-padding-y : $spacer * 2 !default;
   background-color : white;
   z-index : 10000;
 }
-
+body {
+  padding-top: 85px;
+}
 #bignav {
   .col-md-4 {
     height: 100%;
