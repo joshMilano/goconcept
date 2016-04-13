@@ -4885,3 +4885,11 @@ a.text-danger:hover {
     max-width: 72.25rem;
   }
 }*/
+.navbar {
+  background-color: white;
+  z-index: 10000; }
+
+#bignav .col-md-4 {
+  height: 100%; }
+  #bignav .col-md-4 img {
+    height: 100%; }
