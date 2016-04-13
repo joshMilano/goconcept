@@ -4892,4 +4892,5 @@ a.text-danger:hover {
 #bignav .col-md-4 {
   height: 100%; }
   #bignav .col-md-4 img {
-    height: 100%; }
+    height: 100%;
+    object-fit: cover; }
