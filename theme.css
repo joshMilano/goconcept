@@ -4901,6 +4901,8 @@ a.text-danger:hover {
     display: flex;
     align-items: center;
     justify-content: center; }
+    #bignav .col-md-4 .carousel-caption:hover {
+      background: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 48%, rgba(0, 0, 0, 0.8) 52%, rgba(0, 0, 0, 0.4) 100); }
   #bignav .col-md-4 a {
     color: #333; }
   #bignav .col-md-4 img {
