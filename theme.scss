@@ -91,6 +91,11 @@ $navbar-padding-y : $spacer * 2 !default;
 body {
   padding-top: 85px;
 }
+
+.navbar {
+  border-bottom: 1px solid #333;
+  
+}
 #bignav {
   .col-md-4 {
     height: 100%;
