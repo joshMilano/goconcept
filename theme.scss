@@ -92,7 +92,10 @@ $navbar-padding-y:$spacer * 2 !default;
 #bignav {
   .col-md-4 {
     height: 100%;
-    
+
+    .carousel-caption {
+      top:20%;
+    }
     img {
       height: 100%;
       object-fit:cover;
