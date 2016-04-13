@@ -83,3 +83,18 @@ $navbar-padding-y:$spacer * 2 !default;
 
 @import 'bootstrap';
 @import 'pingendo-bootstrap';
+
+.navbar {
+  background-color:white;
+  z-index:10000;
+}
+
+#bignav {
+  .col-md-4 {
+    height: 100%;
+    
+    img {
+      height: 100%;
+    }
+  }
+}
