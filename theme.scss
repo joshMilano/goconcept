@@ -95,6 +95,7 @@ $navbar-padding-y:$spacer * 2 !default;
     
     img {
       height: 100%;
+      object-fit:cover;
     }
   }
 }
