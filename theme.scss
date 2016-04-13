@@ -102,6 +102,10 @@ $navbar-padding-y : $spacer * 2 !default;
       background: linear-gradient(rgba(0,0,0,0) 10%,rgba(0,0,0,.7) 48%, rgba(0,0,0,.7) 52%, rgba(0,0,0,0) 75%);
       display:flex;
       align-items: center; justify-content: center;
+      
+      &:hover {
+        background: linear-gradient(rgba(0,0,0,0.4) 0%,rgba(0,0,0,.8) 48%, rgba(0,0,0,.8) 52%, rgba(0,0,0,0.4) 100);
+      }
     }
     
     a {
