@@ -44,81 +44,79 @@
   <script type="text/javascript" src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
-                  $.get("data.json", function(data) {
-                    $(data.cards).each(function() {
-                      if (this.idList != "570bdf4d121b9e739d74fece")
-                        return;
-        
-        
-                      var $parent = $("#trello").parent();
-                      var name = this.name;
-        
-                      $(this.attachments).each(function() {
-                        var $clone = $("#trello").clone();
-                        $clone.find("img").attr("src", this.url);
-                        $clone.find("p").html(name);
-                        $parent.append($clone);
-                      });
-                      
-                      
-        
-                    });  
-                    	$("#trello").remove();
-                    
-                      $("#images img").on("click", function() {
-                        zoomImage(this);
-                      });
-                  });
-                
-                    var zoomImage = function(img) {
-                      // clone, fix width and append
-                
-                      // create the wrapper and the full width image
-                      var $wrapper = $("<div class='full-screen'>\
-                                          <div class='btn-group m-t-1 m-x-1  pull-xs-right'>\
-                                            <a class='btn btn-primary fa fa-close'></a>\
-                                          </div>\
-                                        </div>");
-                      
-                      var $img = $("<img>");
-                      $img.attr("src", $(img).attr("src"));
-                      $wrapper.append($img);
-                      
-                      
-                     $wrapper.find(".fa-close").on("click", function() {
-                        $("body").removeClass("noscroll");
-                        $wrapper.remove();
-                      });
-                
-                      $(window).on('popstate', function() { 
-                        $("body").removeClass("noscroll");
-                        $wrapper.remove();
-                      })
-                
-                      // block the body scroll
-                      $("body").addClass("noscroll");
-                      $("body").append($wrapper);
-                       $wrapper.find(".fa-chain").on("click", function(e) {
-                          e.preventDefault();
-                          var input = $wrapper.find("input")[0];
-                          input.setSelectionRange(0, input.value.length);
-                      },true)
-                
-                      $wrapper.find("img").on("click", function() {
-                        // body back to scroll
-                        $("body").removeClass("noscroll");
-                        $wrapper.remove();
-                        window.history.pushState(null, "", "#");
-                      });
-                      
-                    }
+                          $.get("data.json", function(data) {
+                            $(data.cards).each(function() {
+                              if (this.idList != "570bdf4d121b9e739d74fece")
+                                return;
                 
                 
-                    
-                    });
+                              var $parent = $("#trello").parent();
+                              var name = this.name;
+                
+                              $(this.attachments).each(function() {
+                                var $clone = $("#trello").clone();
+                                $clone.find("img").attr("src", this.url);
+                                $clone.find("p").html(name);
+                                $parent.append($clone);
+                              });
+                              
+                              
+                
+                            });  
+                            	$("#trello").remove();
+                            
+                              $("#images img").on("click", function() {
+                                zoomImage(this);
+                              });
+                          });
+                        
+                            var zoomImage = function(img) {
+                              // clone, fix width and append
+                        
+                              // create the wrapper and the full width image
+                              var $wrapper = $("<div class='full-screen'>\
+                                                  <div class='btn-group m-t-1 m-x-1  pull-xs-right'>\
+                                                    <a class='btn btn-primary fa fa-close'></a>\
+                                                  </div>\
+                                                </div>");
+                              
+                              var $img = $("<img>");
+                              $img.attr("src", $(img).attr("src"));
+                              $wrapper.append($img);
+                              
+                              
+                             $wrapper.find(".fa-close").on("click", function() {
+                                $("body").removeClass("noscroll");
+                                $wrapper.remove();
+                              });
+                        
+                              $(window).on('popstate', function() { 
+                                $("body").removeClass("noscroll");
+                                $wrapper.remove();
+                              })
+                        
+                              // block the body scroll
+                              $("body").addClass("noscroll");
+                              $("body").append($wrapper);
+                               $wrapper.find(".fa-chain").on("click", function(e) {
+                                  e.preventDefault();
+                                  var input = $wrapper.find("input")[0];
+                                  input.setSelectionRange(0, input.value.length);
+                              },true)
+                        
+                              $wrapper.find("img").on("click", function() {
+                                // body back to scroll
+                                $("body").removeClass("noscroll");
+                                $wrapper.remove();
+                                window.history.pushState(null, "", "#");
+                              });
+                              
+                            }
+                        
+                        
+                            
+                            });
   </script>
-
-
 
 
 </body>
