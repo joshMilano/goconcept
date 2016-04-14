@@ -4894,6 +4894,8 @@ body {
 
 .navbar {
   border-bottom: 1px solid #333; }
+  .navbar .active {
+    font-weight: bold; }
 
 #bignav .col-md-4 {
   height: 100%; }
@@ -4914,6 +4916,9 @@ body {
   #bignav .col-md-4 img {
     height: 100%;
     object-fit: cover; }
+
+#images img {
+  cursor: zoom-in; }
 
 .full-screen {
   z-index: 100000;

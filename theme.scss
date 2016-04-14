@@ -94,6 +94,9 @@ body {
 
 .navbar {
   border-bottom: 1px solid #333;
+  .active {
+    font-weight: bold;
+  }
   
 }
 #bignav {
@@ -127,7 +130,11 @@ body {
 }
 
 
-
+#images {
+  img {
+    cursor: zoom-in;
+  }
+}
 
 .full-screen       {
 
