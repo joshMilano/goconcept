@@ -4918,7 +4918,10 @@ body {
     object-fit: cover; }
 
 #images img {
-  cursor: zoom-in; }
+  cursor: zoom-in;
+  height: 340px;
+  object-fit: cover;
+  width: 100%; }
 
 .full-screen {
   z-index: 100000;
