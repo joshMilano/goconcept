@@ -2994,7 +2994,7 @@ button.list-group-item-danger {
 
 .navbar {
   position: relative;
-  padding: 2rem 2rem; }
+  padding: 1.5rem 1.5rem; }
   .navbar::after {
     content: "";
     display: table;
@@ -3052,8 +3052,8 @@ button.list-group-item-danger {
   width: 1px;
   padding-top: .425rem;
   padding-bottom: .425rem;
-  margin-right: 2rem;
-  margin-left: 2rem;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
   overflow: hidden; }
   .navbar-divider::before {
     content: "\00a0"; }
