@@ -1,4 +1,4 @@
-
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
 // Colors
 //
 // Grayscale and brand colors for use across Bootstrap.
@@ -65,7 +65,7 @@ $link-hover-decoration : underline !default;
 $font-family-sans-serif : "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif : Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace : Menlo, Monaco, Consolas, "Courier New", monospace !default;
-$font-family-base : $font-family-sans-serif !default;
+$font-family-base : Lato;
 
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
 $font-size-root : 16px !default;
@@ -89,15 +89,15 @@ $navbar-padding-y : $spacer * 1.5 !default;
   z-index : 10000;
 }
 body {
-  padding-top: 105px;
+  padding-top : 105px;
 }
 
 .display-4 {
-	font-size: 40px;  
+	font-size : 40px;  
 }
 
 .navbar {
-  border-bottom: 1px solid #333;
+  border-bottom : 1px solid #333;
   .active {
     font-weight: bold;
   }
@@ -119,7 +119,7 @@ body {
 }
 
 .bg-faded {
-  backround-color:#333;
+  backround-color : #333;
 }
 
 .faded {
@@ -170,7 +170,7 @@ body {
   background-color : black;
   overflow-y : scroll;
   height : 100%;
-  cursor: zoom-out;
+  cursor : zoom-out;
 
   > .btn-group {
     position: fixed;
@@ -188,17 +188,17 @@ body {
 }
 
 .b-b {
- border-bottom: 1px #333 solid; 
+ border-bottom : 1px #333 solid; 
 }
 
 .b-r {
- border-right: 1px #333 solid; 
+ border-right : 1px #333 solid; 
 }
 
 .loghi {
-  display:inline;
-  max-height: 100px;
-  max-width: 100px;
+  display : inline;
+  max-height : 100px;
+  max-width : 100px;
 }
 
 .section {
