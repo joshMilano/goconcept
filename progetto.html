@@ -25,20 +25,20 @@
       </li>
     </ul>
   </nav>
-  <div class="section" id="images">
+  <div class="section b-b">
+    <div class="container">
+      <div class="row" draggable="true">
+        <div class="col-lg-12">
+          <h1 class="display-4 p-y-2 text-xs-center" style="font-size:150%">{{project.name}}</h1></div>
+
+      </div>
+    </div>
+  </div>
+  <div class=" section" id="images">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-4 p-a-0" id="trello" ng-repeat="p in projects">
-          <div class="carousel faded slide" data-interval="false" data-ride="carousel" id="carousel-example" ng-click="gotoProject(p)">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="img-fluid" src="{{p.attachments[0].previews[5].url}}">
-                <div class="carousel-caption">
-                  <a class="btn btn-info-outline">{{p.name}}</a>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="col-md-4 p-a-0" ng-repeat="a in project.attachments">
+          <img class="img-fluid" src="{{a.previews[5].url}}">
         </div>
       </div>
     </div>
@@ -56,34 +56,35 @@
         
             myApp.controller('controller', ['$scope', '$http', function($scope, $http) {
         
-        
+            var id = document.location.search.split("&")[1];
             $scope.searchTags = [];
             $http({
               method: 'GET',
               url: 'data.json'
             }).then(function successCallback(response) {
               $scope.model = response;
-              $scope.projects = [];
               // make some fixes on the model coming from trello
               $($scope.model.data.cards).each(function() {
                 var card = this;
         
-                if (card.idList != "570bdf4d121b9e739d74fece")
+                if (card.id != id)
                   return;
-        
-                $scope.projects.push(card);
                 console.log(card);
+        
+                $scope.project = card;
+        
               });
         
             }, function errorCallback(response) {
             });
         
-            $scope.gotoProject = function(p) {
-              document.location = "progetto.html?" + p.name +"&"+ p.id  ;
-            }
         
         }]);
   </script>
+
+
+
+
 
 
 </body>

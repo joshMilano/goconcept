@@ -7,15 +7,15 @@
   <link href="theme.css" rel="stylesheet" type="text/css">
 </head>
 
-<body>
-  <nav class="navbar-fixed-top navbar navbar-full">
+<body ng-controller="controller" ng-app="app">
+  <nav class="navbar-fixed-top navbar navbar-full ">
     <a class="navbar-brand" href="index.html"><img height="50" alt="Brand" src="logo.png"></a>
     <ul class="nav navbar-nav pull-right m-t-1">
-      <li class="nav-item">
-        <a class="nav-link" href="progetti.html">Progetti</a>
+      <li class="nav-item ">
+        <a class=" nav-link" href="progetti.html">Progetti</a>
       </li>
-      <li class="nav-item">
-        <a class="active nav-link" href="brands.html">Brands</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="brands.html">Brands</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="servizi.html">Servizi</a>
@@ -25,22 +25,108 @@
       </li>
     </ul>
   </nav>
-  <div class="p-y-3 section">
+  <div class="bg-faded section section-opaque-light text-xs-center">
     <div class="container-fluid">
+      <div class="row b-b">
+        <div class="bg-faded col-md-6 p-y-2 text-xs-center b-r">
+          <h1 class="display-4 m-y-2">Moderni</h1>
+          <br>
+          <img class=" loghi m-a-2" ng-repeat="m in moderni" src="{{m.attachments[0].url}}">
+        </div>
+        <div class="col-md-6 text-xs-center">
+          <h1 class="display-4 m-t-2">Classici</h1>
+          <br>
+          <img class=" loghi m-a-2" ng-repeat="m in classici" src="{{m.attachments[0].url}}">
+        </div>
+      </div>
       <div class="row">
         <div class="col-md-12">
-          <img src="brands.png" class="img-fluid">
+          <div class="row b-b">
+            <div class="b-r col-md-6 p-y-2 text-xs-center">
+              <h1 class="display-4 m-y-2">Fashion</h1>
+              <br>
+              <img class=" loghi m-a-2" ng-repeat="m in moderni" src="{{m.attachments[0].url}}">
+            </div>
+            <div class="bg-faded col-md-6 text-xs-center">
+              <h1 class="display-4 m-t-2">Outdoor</h1>
+              <br>
+              <img class=" loghi m-a-2" ng-repeat="m in classici" src="{{m.attachments[0].url}}">
+            </div>
+          </div>
         </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="section section-opaque-light text-xs-center">
+    <div class="container-fluid">
+
+      <div class="row">
+
       </div>
     </div>
   </div>
+  <div class="section" id="images">
+    <div class="container-fluid"></div>
+  </div>
   <nav class="navbar navbar-full text-xs-center">
     <span class="navbar-text">GoConcept s.r.l - Sede operativa : Via Niccolo Copernico - Sede legale:
-                Via Orio Vegani 9 - 20125 Milano</span>
+        Via Orio Vegani 9 - 20125 Milano</span>
     <ul class="nav navbar-nav pull-right"></ul>
   </nav>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script type="text/javascript">
+    var myApp = angular.module('app',[]);
+
+      myApp.controller('controller', ['$scope', '$http', function($scope, $http) {
+
+
+        $scope.moderni = [];
+        $scope.classici = [];
+
+        $http({
+          method: 'GET',
+          url: 'data.json'
+        }).then(function successCallback(response) {
+          $scope.model = response;
+
+          // make some fixes on the model coming from trello
+          $($scope.model.data.cards).each(function() {
+            var card = this;
+
+            if (card.idList == "571c9750fd579613b77e80cf") {
+              console.log(card); 
+              $scope.moderni.push(card);
+            }
+
+            // if (card.name == "Ketall")
+            //   console.log("--" , card);
+
+            if (card.idList == "571c9903308ef77c6563fffe") {
+              $scope.classici.push(card);
+            }
+
+          });
+
+        }, function errorCallback(response) {
+        });
+
+        $scope.gotoProject = function(p) {
+          document.location = "progetto.html?" + p.name +"&"+ p.id  ;
+        }
+
+      }]);
+  </script>
+
+
+
+
+
+
+
+
 
 
 </body>
