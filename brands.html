@@ -28,12 +28,12 @@
   <div class="bg-faded section section-opaque-light text-xs-center">
     <div class="container-fluid">
       <div class="row b-b">
-        <div class="bg-faded col-md-6 p-y-2 text-xs-center b-r">
+        <div class="b-r col-md-6 p-y-2 text-xs-center">
           <h1 class="display-4 m-y-2">Moderni</h1>
           <br>
           <img class=" loghi m-a-2" ng-repeat="m in moderni" src="{{m.attachments[0].url}}">
         </div>
-        <div class="col-md-6 text-xs-center">
+        <div class="col-md-6 p-y-2 text-xs-center">
           <h1 class="display-4 m-t-2">Classici</h1>
           <br>
           <img class=" loghi m-a-2" ng-repeat="m in classici" src="{{m.attachments[0].url}}">
@@ -45,13 +45,33 @@
             <div class="b-r col-md-6 p-y-2 text-xs-center">
               <h1 class="display-4 m-y-2">Fashion</h1>
               <br>
-              <img class=" loghi m-a-2" ng-repeat="m in moderni" src="{{m.attachments[0].url}}">
+              <img class=" loghi m-a-2" ng-repeat="m in fashion" src="{{m.attachments[0].url}}">
             </div>
-            <div class="bg-faded col-md-6 text-xs-center">
+            <div class="col-md-6 p-y-2 text-xs-center">
               <h1 class="display-4 m-t-2">Outdoor</h1>
               <br>
-              <img class=" loghi m-a-2" ng-repeat="m in classici" src="{{m.attachments[0].url}}">
+              <img class=" loghi m-a-2" ng-repeat="m in outdoor" src="{{m.attachments[0].url}}">
             </div>
+          </div>
+          <div class="row b-b">
+            <div class="b-r col-md-6 p-y-2 text-xs-center">
+              <h1 class="display-4 m-y-2">Lights</h1>
+              <br>
+              <img class=" loghi m-a-2" ng-repeat="m in lights" src="{{m.attachments[0].url}}">
+            </div>
+            <div class="col-md-6 p-y-2 text-xs-center">
+              <h1 class="display-4  m-y-2">Objects</h1>
+              <br>
+              <img class=" loghi m-a-2" ng-repeat="m in objects" src="{{m.attachments[0].url}}">
+            </div>
+          </div>
+          <div class="row b-b">
+            <div class="b-r col-md-6 p-y-2 text-xs-center">
+              <h1 class="display-4 m-y-2">Fabrics, Rugs and Bedding</h1>
+              <br>
+              <img class=" loghi m-a-2" ng-repeat="m in fabrics" src="{{m.attachments[0].url}}">
+            </div>
+
           </div>
         </div>
       </div>
@@ -85,7 +105,12 @@
 
         $scope.moderni = [];
         $scope.classici = [];
-
+        $scope.fashion = [];
+        $scope.outdoor = [];        
+        $scope.lights = [];
+        $scope.objects = []; 
+        $scope.fabrics = [];
+        
         $http({
           method: 'GET',
           url: 'data.json'
@@ -96,17 +121,39 @@
           $($scope.model.data.cards).each(function() {
             var card = this;
 
-            if (card.idList == "571c9750fd579613b77e80cf") {
+            if (card.idList == "5717c11e0ff6f2ed44b845c7") {
               console.log(card); 
               $scope.moderni.push(card);
             }
 
-            // if (card.name == "Ketall")
-            //   console.log("--" , card);
+             if (card.name == "Rubelli")
+               console.log("--" , card.idList);
 
-            if (card.idList == "571c9903308ef77c6563fffe") {
+            if (card.idList == "571c941f0dd3099f7cf996fd") {
               $scope.classici.push(card);
             }
+            
+            if (card.idList == "571c9750fd579613b77e80cf") {
+              $scope.fashion.push(card);
+            }
+            
+             if (card.idList == "571c9903308ef77c6563fffe") {
+              $scope.outdoor.push(card);
+            }
+            
+              if (card.idList == "571c99152fac2b9f94e1adf7") {
+              $scope.objects.push(card);
+            }
+            
+             if (card.idList == "571c9908be4ba3bef1d5680e") {
+              $scope.lights.push(card);
+            }
+            
+            if (card.idList == "571c992188cd6ac95e38beab") {
+              $scope.fabrics.push(card);
+            }
+            
+            
 
           });
 
@@ -119,6 +166,12 @@
 
       }]);
   </script>
+
+
+
+
+
+
 
 
 
