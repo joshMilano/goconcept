@@ -77,8 +77,8 @@ $font-size-xs : .75rem !default;
 
 $headings-font-family : inherit !default;
 
-$navbar-padding-x : $spacer * 2 !default;
-$navbar-padding-y : $spacer * 2 !default;	
+$navbar-padding-x : $spacer * 1.5 !default;
+$navbar-padding-y : $spacer * 1.5 !default;	
 
 
 @import 'bootstrap';
@@ -89,7 +89,11 @@ $navbar-padding-y : $spacer * 2 !default;
   z-index : 10000;
 }
 body {
-  padding-top: 120px;
+  padding-top: 105px;
+}
+
+.display-4 {
+	font-size: 40px;  
 }
 
 .navbar {
@@ -112,6 +116,10 @@ body {
       object-fit:cover;
     }
   }
+}
+
+.bg-faded {
+  backround-color:#333;
 }
 
 .faded {
@@ -181,4 +189,20 @@ body {
 
 .b-b {
  border-bottom: 1px #333 solid; 
+}
+
+.b-r {
+ border-right: 1px #333 solid; 
+}
+
+.loghi {
+  display:inline;
+  max-height: 100px;
+  max-width: 100px;
+}
+
+.section {
+  .background-image {
+    opacity:0.2;
+  }
 }
