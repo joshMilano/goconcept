@@ -9,7 +9,7 @@
 
 <body ng-controller="controller" ng-app="app">
   <nav class="navbar-fixed-top navbar navbar-full">
-    <a class="navbar-brand" href="index.html"><img height="50" alt="Brand" src="logo.png"></a>
+    <a class="navbar-brand"><img height=" alt=" src="logo.png" class="center-block img-fluid" style="width:630;"></a>
     <ul class="nav navbar-nav pull-right m-t-1">
       <li class="nav-item active">
         <a class="active nav-link" href="progetti.html">Progetti</a>
@@ -53,37 +53,39 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
   <script type="text/javascript">
     var myApp = angular.module('app',[]);
-        
-            myApp.controller('controller', ['$scope', '$http', function($scope, $http) {
-        
-        
-            $scope.searchTags = [];
-            $http({
-              method: 'GET',
-              url: 'data.json'
-            }).then(function successCallback(response) {
-              $scope.model = response;
-              $scope.projects = [];
-              // make some fixes on the model coming from trello
-              $($scope.model.data.cards).each(function() {
-                var card = this;
-        
-                if (card.idList != "570bdf4d121b9e739d74fece")
-                  return;
-        
-                $scope.projects.push(card);
-                console.log(card);
-              });
-        
-            }, function errorCallback(response) {
-            });
-        
-            $scope.gotoProject = function(p) {
-              document.location = "progetto.html?" + p.name +"&"+ p.id  ;
-            }
-        
-        }]);
+                
+                    myApp.controller('controller', ['$scope', '$http', function($scope, $http) {
+                
+                
+                    $scope.searchTags = [];
+                    $http({
+                      method: 'GET',
+                      url: 'data.json'
+                    }).then(function successCallback(response) {
+                      $scope.model = response;
+                      $scope.projects = [];
+                      // make some fixes on the model coming from trello
+                      $($scope.model.data.cards).each(function() {
+                        var card = this;
+                
+                        if (card.idList != "570bdf4d121b9e739d74fece")
+                          return;
+                
+                        $scope.projects.push(card);
+                        console.log(card);
+                      });
+                
+                    }, function errorCallback(response) {
+                    });
+                
+                    $scope.gotoProject = function(p) {
+                      document.location = "progetto.html?" + p.name +"&"+ p.id  ;
+                    }
+                
+                }]);
   </script>
+
+
 
 
 </body>
