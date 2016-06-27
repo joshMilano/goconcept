@@ -9,7 +9,7 @@
 
 <body ng-controller="controller" ng-app="app">
   <nav class="navbar-fixed-top navbar navbar-full ">
-    <a class="navbar-brand"><img height=" alt=" src="logo.png" class="center-block img2-fluid" style="width:700;"></a>
+    <a class="navbar-brand"><img height=" alt=" src="logo.png" class="center-block img2-fluid" style="width:600;"></a>
     <ul class="lead m-t-1 nav navbar-nav pull-right">
       <li class="nav-item ">
         <a class=" nav-link" href="progetti.html">Progetti</a>
@@ -81,76 +81,74 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script type="text/javascript">
       var myApp = angular.module('app',[]);
-                                                                  
-                                                                        myApp.controller('controller', ['$scope', '$http', function($scope, $http) {
-                                                                  
-                                                                  
-                                                                          $scope.moderni = [];
-                                                                          $scope.classici = [];
-                                                                          $scope.fashion = [];
-                                                                          $scope.outdoor = [];        
-                                                                          $scope.lights = [];
-                                                                          $scope.objects = []; 
-                                                                          $scope.fabrics = [];
-                                                                          
-                                                                          $http({
-                                                                            method: 'GET',
-                                                                            url: 'data.json'
-                                                                          }).then(function successCallback(response) {
-                                                                            $scope.model = response;
-                                                                  
-                                                                            // make some fixes on the model coming from trello
-                                                                            $($scope.model.data.cards).each(function() {
-                                                                              var card = this;
-                                                                  
-                                                                              if (card.idList == "5717c11e0ff6f2ed44b845c7") {
-                                                                                console.log(card); 
-                                                                                $scope.moderni.push(card);
-                                                                              }
-                                                                  
-                                                                               if (card.name == "Rubelli")
-                                                                                 console.log("--" , card.idList);
-                                                                  
-                                                                              if (card.idList == "571c941f0dd3099f7cf996fd") {
-                                                                                $scope.classici.push(card);
-                                                                              }
                                                                               
-                                                                              if (card.idList == "571c9750fd579613b77e80cf") {
-                                                                                $scope.fashion.push(card);
-                                                                              }
-                                                                              
-                                                                               if (card.idList == "571c9903308ef77c6563fffe") {
-                                                                                $scope.outdoor.push(card);
-                                                                              }
-                                                                              
-                                                                                if (card.idList == "571c99152fac2b9f94e1adf7") {
-                                                                                $scope.objects.push(card);
-                                                                              }
-                                                                              
-                                                                               if (card.idList == "571c9908be4ba3bef1d5680e") {
-                                                                                $scope.lights.push(card);
-                                                                              }
-                                                                              
-                                                                              if (card.idList == "571c992188cd6ac95e38beab") {
-                                                                                $scope.fabrics.push(card);
-                                                                              }
+                                                                                    myApp.controller('controller', ['$scope', '$http', function($scope, $http) {
                                                                               
                                                                               
-                                                                  
-                                                                            });
-                                                                  
-                                                                          }, function errorCallback(response) {
-                                                                          });
-                                                                  
-                                                                          $scope.gotoProject = function(p) {
-                                                                            document.location = "progetto.html?" + p.name +"&"+ p.id  ;
-                                                                          }
-                                                                  
-                                                                        }]);
+                                                                                      $scope.moderni = [];
+                                                                                      $scope.classici = [];
+                                                                                      $scope.fashion = [];
+                                                                                      $scope.outdoor = [];        
+                                                                                      $scope.lights = [];
+                                                                                      $scope.objects = []; 
+                                                                                      $scope.fabrics = [];
+                                                                                      
+                                                                                      $http({
+                                                                                        method: 'GET',
+                                                                                        url: 'data.json'
+                                                                                      }).then(function successCallback(response) {
+                                                                                        $scope.model = response;
+                                                                              
+                                                                                        // make some fixes on the model coming from trello
+                                                                                        $($scope.model.data.cards).each(function() {
+                                                                                          var card = this;
+                                                                              
+                                                                                          if (card.idList == "5717c11e0ff6f2ed44b845c7") {
+                                                                                            console.log(card); 
+                                                                                            $scope.moderni.push(card);
+                                                                                          }
+                                                                              
+                                                                                           if (card.name == "Rubelli")
+                                                                                             console.log("--" , card.idList);
+                                                                              
+                                                                                          if (card.idList == "571c941f0dd3099f7cf996fd") {
+                                                                                            $scope.classici.push(card);
+                                                                                          }
+                                                                                          
+                                                                                          if (card.idList == "571c9750fd579613b77e80cf") {
+                                                                                            $scope.fashion.push(card);
+                                                                                          }
+                                                                                          
+                                                                                           if (card.idList == "571c9903308ef77c6563fffe") {
+                                                                                            $scope.outdoor.push(card);
+                                                                                          }
+                                                                                          
+                                                                                            if (card.idList == "571c99152fac2b9f94e1adf7") {
+                                                                                            $scope.objects.push(card);
+                                                                                          }
+                                                                                          
+                                                                                           if (card.idList == "571c9908be4ba3bef1d5680e") {
+                                                                                            $scope.lights.push(card);
+                                                                                          }
+                                                                                          
+                                                                                          if (card.idList == "571c992188cd6ac95e38beab") {
+                                                                                            $scope.fabrics.push(card);
+                                                                                          }
+                                                                                          
+                                                                                          
+                                                                              
+                                                                                        });
+                                                                              
+                                                                                      }, function errorCallback(response) {
+                                                                                      });
+                                                                              
+                                                                                      $scope.gotoProject = function(p) {
+                                                                                        document.location = "progetto.html?" + p.name +"&"+ p.id  ;
+                                                                                      }
+                                                                              
+                                                                                    }]);
     </script>
   </div>
-
-
 
 
 
